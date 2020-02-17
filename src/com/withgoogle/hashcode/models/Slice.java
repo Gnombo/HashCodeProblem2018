@@ -31,4 +31,12 @@ public class Slice {
     public Boolean isValid(Pizza pizza) {
         return true;
     }
+    
+    public Integer getWidth() {
+        return this.bottomRigth.getX() - this.topLeft.getX() + 1;
+    }
+    
+    public Integer getHeight() {
+        return this.bottomRigth.getY() - this.topLeft.getY() + 1;
+    }
 }

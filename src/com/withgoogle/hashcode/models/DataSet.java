@@ -14,6 +14,36 @@ public class DataSet {
 
     public DataSet() {}
 
+    public Integer countMushrooms() {
+        return this.count(Ingredient.M);
+    }
+
+    public Integer countTomatoes() {
+        return this.count(Ingredient.T);
+    }
+
+    private Integer count(Ingredient ingredient) {
+
+        Integer count = 0;
+
+        for (int i = 0; i < this.pizza.size(); i++) {
+
+            List<Ingredient> row = this.pizza.get(i);
+
+            for (int j = 0; j < row.size(); j++) {
+                if (row.get(j).equals(ingredient)) {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    public Integer getMinimumSliceSize() {
+        return this.minimumIngredientsOfEachTypePerSlice * 2;
+    }
+
     public Integer getRows() {
         return rows;
     }
